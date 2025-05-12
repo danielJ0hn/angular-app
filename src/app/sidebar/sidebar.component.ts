@@ -1,10 +1,10 @@
 import { Component, computed, inject, input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ListItemComponent } from "./list-item/list-item.component";
 
 @Component({
   selector: 'app-sidebar',
-  imports: [ListItemComponent],
+  imports: [ListItemComponent, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

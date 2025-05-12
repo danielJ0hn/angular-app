@@ -28,4 +28,14 @@
         <app-list-item [item]="item" (idClicked)="loadSection($event)" />
         }
     </div>
+    <div class="sidebar-items">
+        <ul>
+            @for(item of Sections(); track item.id) {
+            <li>
+                <a [routerLink]="['content', item.id]" class="sidebar-item" routerLinkActive="router-link-active">{{
+                    item.title }}</a>
+            </li>
+            }
+        </ul>
+    </div>
 </div>
