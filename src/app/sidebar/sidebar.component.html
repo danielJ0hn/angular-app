@@ -1,0 +1,31 @@
+<!-- <h3>{{WelcomeMessage()}}</h3>
+<li>
+    <ul>
+        {{AppName()}}
+    </ul>
+    <ul>
+        {{SubHeader()}}
+    </ul>
+</li>
+
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
+    <div *ngFor="let section of Sections()">
+        {{section.title}}
+    </div>
+    @for(section of Sections(); track section.id) {
+        <div class="paths">
+            {{section.title}}
+        </div>
+    }
+</div> -->
+<div class="sidebar-container">
+    <div class="sidebar-header">
+        <h2>{{AppName()}}</h2>
+        <h4>{{SubHeader()}}</h4>
+    </div>
+    <div class="sidebar-items">
+        @for(item of Sections(); track item.id) {
+        <app-list-item [item]="item" (idClicked)="loadSection($event)" />
+        }
+    </div>
+</div>
